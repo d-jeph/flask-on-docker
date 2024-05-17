@@ -11,10 +11,10 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 8080 available to the world outside this container
-EXPOSE 8080
+EXPOSE 4200
 
 # Define environment variable
 ENV FLASK_APP=wsgi.py
 
 # Run Gunicorn server when the container launches
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "wsgi:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:4200", "wsgi:app"]
